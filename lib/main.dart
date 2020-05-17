@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: GoogleFonts.roboto().fontFamily,
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF031D44),
       ),
       home: SplashView()
     );

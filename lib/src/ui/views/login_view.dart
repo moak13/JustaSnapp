@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:justasnapp/src/ui/views/signup_view.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_botton.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_text_field.dart';
 
@@ -95,34 +96,46 @@ class _LoginViewState extends State<LoginView> {
                                 inputType: TextInputType.text,
                                 isPassword: true,
                               ),
-                              AuthBotton(title: 'Login',),
+                              AuthBotton(
+                                title: 'Login',
+                              ),
                               Padding(
                                   padding: const EdgeInsets.only(top: 20),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                    Text(
-                                      'New to JustaSnapp?',
-                                      style: GoogleFonts.roboto(
-                                        textStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: ScreenUtil().setSp(14),
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    InkWell(
-                                      onTap: () {},
-                                      child: Text(
-                                        ' Sign Up',
-                                        style: GoogleFonts.roboto(
-                                          textStyle: TextStyle(
-                                              color: Color(0xFFC80707),
-                                              fontSize: ScreenUtil().setSp(14),
-                                              fontWeight: FontWeight.w500),
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          'New to JustaSnapp?',
+                                          style: GoogleFonts.roboto(
+                                            textStyle: TextStyle(
+                                                color: Colors.white,
+                                                fontSize:
+                                                    ScreenUtil().setSp(14),
+                                                fontWeight: FontWeight.w500),
+                                          ),
                                         ),
-                                      ),
-                                    )
-                                  ])),
+                                        InkWell(
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    SignupView(),
+                                              ),
+                                            );
+                                          },
+                                          child: Text(
+                                            ' Sign Up',
+                                            style: GoogleFonts.roboto(
+                                              textStyle: TextStyle(
+                                                  color: Color(0xFFC80707),
+                                                  fontSize:
+                                                      ScreenUtil().setSp(14),
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ),
+                                        )
+                                      ])),
                             ],
                           ),
                         ),

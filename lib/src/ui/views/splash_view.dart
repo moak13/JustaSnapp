@@ -1,16 +1,52 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'dart:async';
 
-class SplashView extends StatelessWidget {
-  const SplashView({Key key}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:justasnapp/src/ui/views/login_view.dart';
+
+class SplashView extends StatefulWidget {
+  SplashView({Key key}) : super(key: key);
+
+  @override
+  _SplashViewState createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+
+  // This function is use to automatically navigate
+  void _next() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => LoginView(),
+      ),
+    );
+  }
+
+  // This function is triggered when the screen is done.
+  Future<Timer> onLoadingDone() async {
+    Duration _duration = Duration(seconds: 15); // This sets the delay in which the splash screen awaits before auto routing.
+    return Timer(_duration, _next);
+  }
+
+  @override
+  void initState() { 
+    super.initState();
+    onLoadingDone();
+  }
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(
+      context,
+      width: 360, // This is the design width
+      height: 640, // This is the design height
+      allowFontScaling: true,
+    );
     return Scaffold(
-      //backgroundColor: Colors.grey,
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        height: ScreenUtil().setHeight(ScreenUtil.screenHeight),
+        width: ScreenUtil().setWidth(ScreenUtil.screenWidth),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/img/bg_img.png'),
@@ -32,7 +68,7 @@ class SplashView extends StatelessWidget {
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 35,
+                      fontSize: ScreenUtil().setSp(35),
                       color: Color(0XFF303C42),
                     ),
                   ),
@@ -46,11 +82,11 @@ class SplashView extends StatelessWidget {
                   bottom: 465,
                 ),
                 child: Text(
-                  "Everyone's Maerket",
+                  "Everyone's Market",
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: 16,
+                      fontSize: ScreenUtil().setSp(16),
                       color: Color(0XFF303C42),
                     ),
                   ),

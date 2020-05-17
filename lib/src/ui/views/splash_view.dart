@@ -26,7 +26,7 @@ class _SplashViewState extends State<SplashView> {
   // This function is triggered when the screen is done.
   Future<Timer> onLoadingDone() async {
     Duration _duration = Duration(seconds: 15); // This sets the delay in which the splash screen awaits before auto routing.
-    return Timer(_duration, _next);
+    return Timer(_duration, _next); // Where the magic combo takes place
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:justasnapp/src/ui/views/favourite_view.dart';
 import 'package:justasnapp/src/ui/views/home_view.dart';
 import 'package:justasnapp/src/ui/views/message_view.dart';
@@ -13,13 +14,21 @@ class Wrapper extends StatefulWidget {
 
 class _WrapperState extends State<Wrapper> {
   int _currentIndex = 0;
-  String _title;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(_title),
+        title: Text(
+          _currentIndex == 0
+              ? 'JustaSnapp'
+              : _currentIndex == 1
+                  ? 'Favorite'
+                  : _currentIndex == 2 ? 'Message' : 'Profile',
+          style: GoogleFonts.roboto(
+            textStyle: TextStyle(color: Colors.white),
+          ),
+        ),
         centerTitle: true,
         backgroundColor: Color(0xFF031D44),
         actions: <Widget>[
@@ -52,28 +61,6 @@ class _WrapperState extends State<Wrapper> {
             if (mounted) {
               setState(() {
                 _currentIndex = val;
-                switch (val) {
-                  case 0:
-                    {
-                      _title = 'JustaSnapp';
-                    }
-                    break;
-                  case 1:
-                    {
-                      _title = 'Favorite';
-                    }
-                    break;
-                  case 2:
-                    {
-                      _title = 'Message';
-                    }
-                    break;
-                  case 3:
-                    {
-                      _title = 'Profile';
-                    }
-                    break;
-                }
               });
             }
           },

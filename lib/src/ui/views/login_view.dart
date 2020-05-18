@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:justasnapp/src/ui/views/signup_view.dart';
+import 'package:justasnapp/src/ui/views/wrapper.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_botton.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_text_field.dart';
 
@@ -98,6 +99,7 @@ class _LoginViewState extends State<LoginView> {
                               ),
                               AuthBotton(
                                 title: 'Login',
+                                child: Wrapper(),
                               ),
                               Padding(
                                   padding: const EdgeInsets.only(top: 20),

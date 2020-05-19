@@ -4,6 +4,7 @@ import 'package:justasnapp/src/ui/views/favourite_view.dart';
 import 'package:justasnapp/src/ui/views/home_view.dart';
 import 'package:justasnapp/src/ui/views/message_view.dart';
 import 'package:justasnapp/src/ui/views/profile_view.dart';
+import 'package:justasnapp/src/ui/views/settinggs_view.dart';
 
 class Wrapper extends StatefulWidget {
   Wrapper({Key key}) : super(key: key);
@@ -36,7 +37,13 @@ class _WrapperState extends State<Wrapper> {
               ? IconButton(
                   color: Colors.white,
                   icon: Icon(Icons.settings),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => SettingsView(),
+                      ),
+                    );
+                  },
                   tooltip: 'settings',
                 )
               : IconButton(

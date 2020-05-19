@@ -12,8 +12,16 @@ class _MessageViewState extends State<MessageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Message View'),
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text('You have not initiated any chat yet'),
+          ),
+          Expanded(
+            child: Container(),
+          ),
+        ],
       ),
     );
   }

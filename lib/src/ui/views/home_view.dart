@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:justasnapp/src/models/category_model.dart';
+import 'package:justasnapp/src/ui/views/category_view.dart';
 import 'package:justasnapp/src/ui/widgets/live_data/circular_category.dart';
 
 class HomeView extends StatefulWidget {
@@ -30,7 +31,13 @@ class _HomeViewState extends State<HomeView> {
                       textStyle: TextStyle(color: Colors.red),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => CategoryView(),
+                      ),
+                    );
+                  },
                 )),
           ),
           Padding(

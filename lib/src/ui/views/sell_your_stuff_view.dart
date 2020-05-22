@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:justasnapp/src/ui/widgets/static_data/item_details_text_fields.dart';
 
 class SellYourStuffView extends StatelessWidget {
   @override
@@ -15,18 +16,21 @@ class SellYourStuffView extends StatelessWidget {
           children: <Widget>[
             Container(
               color: Color(0xFFC4C4C4),
-              height: 150,
+              height: deviceSize.height * 0.15,
               width: double.infinity,
               child: Icon(Icons.photo_camera),
             ),
-            SizedBox(height:15),
-            Text(
-              'Details of the Item',
-              style: GoogleFonts.roboto(
-                textStyle: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+            SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                'Details of the Item',
+                style: GoogleFonts.roboto(
+                  textStyle: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),
@@ -49,51 +53,16 @@ class SellYourStuffView extends StatelessWidget {
                   ItemDetailTextField(
                     title: 'Phone Number',
                   ),
+                  ItemDetailTextField(
+                    title: 'Price',
+                    isPrice: true,
+                  ),
                 ],
               ),
             )
           ],
         ),
       )),
-    );
-  }
-}
-
-class ItemDetailTextField extends StatelessWidget {
-  final String title;
-  final int maxline;
-  const ItemDetailTextField({
-    @required this.title,
-    this.maxline,
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          title,
-          style: GoogleFonts.roboto(
-            textStyle: TextStyle(
-              color: Theme.of(context).primaryColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
-        TextFormField(
-          maxLines: maxline,
-          decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(10),
-              )),
-        ),
-      ],
     );
   }
 }

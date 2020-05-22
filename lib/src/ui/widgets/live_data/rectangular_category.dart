@@ -12,7 +12,7 @@ class RectangularCategory extends StatelessWidget {
       child: Card(
         child: ListTile(
           title: Text(title),
-          subtitle: Text(ads.toString() + 'ads'),
+          subtitle: Text(ads.toString() + ' ads'),
           trailing: Icon(Icons.arrow_forward_ios),
         ),
       ),

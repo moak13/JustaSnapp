@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class SellYourStuffView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,17 @@ class SellYourStuffView extends StatelessWidget {
               width: double.infinity,
               child: Icon(Icons.photo_camera),
             ),
-            Text('Details of the Item'),
+            SizedBox(height:15),
+            Text(
+              'Details of the Item',
+              style: GoogleFonts.roboto(
+                textStyle: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
             Form(
               child: Column(
                 children: <Widget>[
@@ -54,7 +63,7 @@ class ItemDetailTextField extends StatelessWidget {
   final String title;
   final int maxline;
   const ItemDetailTextField({
-    this.title,
+    @required this.title,
     this.maxline,
     Key key,
   }) : super(key: key);

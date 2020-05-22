@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:justasnapp/src/ui/views/edit_profile_view.dart';
 
 class ProfileView extends StatefulWidget {
   ProfileView({Key key}) : super(key: key);
@@ -14,19 +15,25 @@ class _ProfileViewState extends State<ProfileView> {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Container(
-            width: double.infinity,
-            height: deviceSize.height * 0.2,
-            child: Center(
-              child: ListTile(
-                leading: CircleAvatar(
-                  radius: 30,
-                  child: Icon(Icons.person, color: Colors.white),
-                  backgroundColor: Colors.grey,
-                ),
-                title: Text('User Name'),
-                subtitle: Text(
-                  'User Email',
+          InkWell(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (ctx) => EditProfile()));
+            },
+            child: Container(
+              width: double.infinity,
+              height: deviceSize.height * 0.2,
+              child: Center(
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    child: Icon(Icons.person, color: Colors.white),
+                    backgroundColor: Colors.grey,
+                  ),
+                  title: Text('User Name'),
+                  subtitle: Text(
+                    'User Email',
+                  ),
                 ),
               ),
             ),
@@ -48,7 +55,9 @@ class _ProfileViewState extends State<ProfileView> {
                         indicatorSize: TabBarIndicatorSize.tab,
                         indicatorPadding: EdgeInsets.symmetric(horizontal: 30),
                         tabs: [
-                          Text('Selling',),
+                          Text(
+                            'Selling',
+                          ),
                           Text('Sold'),
                         ],
                       ),

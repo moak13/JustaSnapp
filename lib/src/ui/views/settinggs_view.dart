@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:justasnapp/src/ui/views/aboutus_view.dart';
+import 'package:justasnapp/src/ui/views/terms&conditions_view.dart';
 
 class SettingsView extends StatelessWidget {
   @override
@@ -36,7 +38,10 @@ class SettingsView extends StatelessWidget {
                 title: Text('About Us'),
                 trailing: IconButton(
                   icon: Icon(Icons.arrow_forward_ios),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (contex) => AboutUsView()));
+                  },
                 ),
               ),
               Divider(),
@@ -44,12 +49,25 @@ class SettingsView extends StatelessWidget {
                 title: Text('Terms & Conditions'),
                 trailing: IconButton(
                   icon: Icon(Icons.arrow_forward_ios),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (contex) => TermsAndConditionsView()));
+                  },
                 ),
               ),
               Divider(),
               ListTile(
-                title: Text('Log Out'),
+                title: InkWell(
+                  child: Text(
+                    'Log Out',
+                    style: TextStyle(
+                      color: Theme.of(context).errorColor,
+                    ),
+                  ),
+                  onTap: () {
+                    // Log Out of the App
+                  },
+                ),
               ),
             ]),
           ),

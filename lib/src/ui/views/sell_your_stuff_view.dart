@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// const kFormHeadingTextstyle = TextStyle(
-//   color: Color(0xFF031D44),
-//   fontFamily: GoogleFonts.roboto().toString(),
-// );
 
 class SellYourStuffView extends StatelessWidget {
   @override
@@ -27,71 +23,22 @@ class SellYourStuffView extends StatelessWidget {
             Text('Details of the Item'),
             Form(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'Item',
-                    style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                  ItemDetailTextField(
+                    title: 'Item',
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(10),
-                        )),
+                  ItemDetailTextField(
+                    title: 'Category',
                   ),
-                  Text('Category'),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(10),
-                        )),
+                  ItemDetailTextField(
+                    title: 'Description',
+                    maxline: 7,
                   ),
-                  Text('Description'),
-                  TextFormField(
-                    maxLines: 7,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
+                  ItemDetailTextField(
+                    title: 'Location',
                   ),
-                  Text('Location'),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  Text('PhoneNumber'),
-                  TextFormField(
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
+                  ItemDetailTextField(
+                    title: 'Phone Number',
                   ),
                 ],
               ),
@@ -99,6 +46,45 @@ class SellYourStuffView extends StatelessWidget {
           ],
         ),
       )),
+    );
+  }
+}
+
+class ItemDetailTextField extends StatelessWidget {
+  final String title;
+  final int maxline;
+  const ItemDetailTextField({
+    this.title,
+    this.maxline,
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          title,
+          style: GoogleFonts.roboto(
+            textStyle: TextStyle(
+              color: Theme.of(context).primaryColor,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        TextFormField(
+          maxLines: maxline,
+          decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(10),
+              )),
+        ),
+      ],
     );
   }
 }

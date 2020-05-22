@@ -5,7 +5,7 @@ import 'package:justasnapp/src/ui/views/home_view.dart';
 import 'package:justasnapp/src/ui/views/message_view.dart';
 import 'package:justasnapp/src/ui/views/profile_view.dart';
 import 'package:justasnapp/src/ui/views/sell_your_stuff_view.dart';
-import 'package:justasnapp/src/ui/views/settinggs_view.dart';
+import 'package:justasnapp/src/ui/views/settings_view.dart';
 
 class Wrapper extends StatefulWidget {
   Wrapper({Key key}) : super(key: key);

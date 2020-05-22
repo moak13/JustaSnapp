@@ -4,6 +4,7 @@ import 'package:justasnapp/src/ui/views/favourite_view.dart';
 import 'package:justasnapp/src/ui/views/home_view.dart';
 import 'package:justasnapp/src/ui/views/message_view.dart';
 import 'package:justasnapp/src/ui/views/profile_view.dart';
+import 'package:justasnapp/src/ui/views/sell_your_stuff_view.dart';
 import 'package:justasnapp/src/ui/views/settinggs_view.dart';
 
 class Wrapper extends StatefulWidget {
@@ -18,6 +19,20 @@ class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.grey,
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 30,
+        ),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (ctx) => SellYourStuffView()),
+          );
+        },
+      ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(

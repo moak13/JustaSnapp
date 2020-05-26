@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/screenutil.dart';
+import 'package:justasnapp/src/util/screen_util.dart';
 
 class SaveProfileButton extends StatelessWidget {
   final String title;
@@ -27,7 +27,7 @@ class SaveProfileButton extends StatelessWidget {
               style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   color: Colors.white,
-                  fontSize: ScreenUtil().setSp(18),
+                  fontSize: ScreenUtil(context).setSp(percentage: 18),
                   fontStyle: FontStyle.normal,
                 ),
               ),

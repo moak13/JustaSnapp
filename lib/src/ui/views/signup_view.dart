@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:justasnapp/src/ui/views/wrapper.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_botton.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_text_field.dart';
+import 'package:justasnapp/src/util/screen_util.dart';
 
 class SignupView extends StatefulWidget {
   SignupView({Key key}) : super(key: key);
@@ -15,18 +15,12 @@ class SignupView extends StatefulWidget {
 class _SignupViewState extends State<SignupView> {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(
-      context,
-      width: 360, // This is the design width
-      height: 640, // This is the design height
-      allowFontScaling: true,
-    );
     return Scaffold(
       backgroundColor: Colors.grey[400],
       body: SafeArea(
         child: Container(
-          height: ScreenUtil().setHeight(ScreenUtil.screenHeight),
-          width: ScreenUtil().setWidth(ScreenUtil.screenWidth),
+          height: ScreenUtil(context).setHeight(),
+          width: ScreenUtil(context).setWidth(),
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/img/bg_img.png'),
@@ -37,8 +31,8 @@ class _SignupViewState extends State<SignupView> {
             fit: StackFit.expand,
             children: <Widget>[
               Container(
-                height: ScreenUtil().setHeight(ScreenUtil.screenHeight),
-                width: ScreenUtil().setWidth(ScreenUtil.screenWidth),
+                height: ScreenUtil(context).setHeight(),
+                width: ScreenUtil(context).setWidth(),
                 decoration: BoxDecoration(color: Colors.black45),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,7 +53,7 @@ class _SignupViewState extends State<SignupView> {
                               style: GoogleFonts.roboto(
                                 textStyle: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: ScreenUtil().setSp(20),
+                                  fontSize: ScreenUtil(context).setSp(percentage: 20),
                                   color: Colors.white,
                                 ),
                               ),

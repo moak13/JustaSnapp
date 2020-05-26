@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:justasnapp/src/ui/views/signup_view.dart';
 import 'package:justasnapp/src/ui/views/wrapper.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_botton.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/auth_text_field.dart';
+import 'package:justasnapp/src/util/screen_util.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({Key key}) : super(key: key);
@@ -16,18 +16,12 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(
-      context,
-      width: 360, // This is the design width
-      height: 640, // This is the design height
-      allowFontScaling: true,
-    );
     return Scaffold(
       backgroundColor: Colors.grey[400],
       body: SafeArea(
         child: Container(
-          height: ScreenUtil().setHeight(ScreenUtil.screenHeight),
-          width: ScreenUtil().setWidth(ScreenUtil.screenWidth),
+          height: ScreenUtil(context).setHeight(),
+          width: ScreenUtil(context).setWidth(),
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/img/bg_img.png'),
@@ -38,8 +32,8 @@ class _LoginViewState extends State<LoginView> {
             fit: StackFit.expand,
             children: <Widget>[
               Container(
-                height: ScreenUtil().setHeight(ScreenUtil.screenHeight),
-                width: ScreenUtil().setWidth(ScreenUtil.screenWidth),
+                height: ScreenUtil(context).setHeight(),
+                width: ScreenUtil(context).setWidth(),
                 decoration: BoxDecoration(color: Colors.black45),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,7 +50,8 @@ class _LoginViewState extends State<LoginView> {
                           style: GoogleFonts.roboto(
                             textStyle: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: ScreenUtil().setSp(27),
+                              fontSize:
+                                  ScreenUtil(context).setSp(percentage: 27),
                               color: Colors.white,
                             ),
                           ),
@@ -74,7 +69,8 @@ class _LoginViewState extends State<LoginView> {
                           style: GoogleFonts.roboto(
                             textStyle: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: ScreenUtil().setSp(14),
+                              fontSize:
+                                  ScreenUtil(context).setSp(percentage: 14),
                               color: Colors.white,
                             ),
                           ),
@@ -112,8 +108,8 @@ class _LoginViewState extends State<LoginView> {
                                           style: GoogleFonts.roboto(
                                             textStyle: TextStyle(
                                                 color: Colors.white,
-                                                fontSize:
-                                                    ScreenUtil().setSp(14),
+                                                fontSize: ScreenUtil(context)
+                                                    .setSp(percentage: 14),
                                                 fontWeight: FontWeight.w500),
                                           ),
                                         ),
@@ -131,8 +127,8 @@ class _LoginViewState extends State<LoginView> {
                                             style: GoogleFonts.roboto(
                                               textStyle: TextStyle(
                                                   color: Color(0xFFC80707),
-                                                  fontSize:
-                                                      ScreenUtil().setSp(14),
+                                                  fontSize: ScreenUtil(context)
+                                                      .setSp(percentage: 14),
                                                   fontWeight: FontWeight.w500),
                                             ),
                                           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:justasnapp/src/ui/widgets/profile_button.dart';
+import 'package:justasnapp/src/ui/widgets/static_data/profile_button.dart';
 
 // import ''
 

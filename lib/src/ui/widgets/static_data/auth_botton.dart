@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:justasnapp/src/util/screen_util.dart';
 
 class AuthBotton extends StatelessWidget {
   final String title;
@@ -18,8 +18,8 @@ class AuthBotton extends StatelessWidget {
           );
         },
         child: Container(
-          height: ScreenUtil().setHeight(59),
-          width: ScreenUtil().setWidth(321),
+          height: ScreenUtil(context).setHeight(height: 59),
+          width: ScreenUtil(context).setWidth(width: 321),
           decoration: BoxDecoration(
             color: Color(0xFF031D44),
             borderRadius: BorderRadius.circular(5),
@@ -30,7 +30,7 @@ class AuthBotton extends StatelessWidget {
               style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   color: Colors.white,
-                  fontSize: ScreenUtil().setSp(18),
+                  fontSize: ScreenUtil(context).setSp(percentage: 18),
                   fontStyle: FontStyle.normal,
                 ),
               ),

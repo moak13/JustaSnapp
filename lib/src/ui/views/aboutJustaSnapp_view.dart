@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:justasnapp/src/util/screen_util.dart';
 
 class AboutJustaSnappView extends StatelessWidget {
   @override
@@ -32,7 +32,7 @@ class AboutJustaSnappView extends StatelessWidget {
                 style: GoogleFonts.roboto(
                   textStyle: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: ScreenUtil().setSp(35),
+                    fontSize: ScreenUtil(context).setSp(percentage: 35),
                     color: Theme.of(context).primaryColor,
                   ),
                 ),
@@ -43,7 +43,7 @@ class AboutJustaSnappView extends StatelessWidget {
               style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   fontWeight: FontWeight.w500,
-                  fontSize: ScreenUtil().setSp(16),
+                  fontSize: ScreenUtil(context).setSp(percentage: 16),
                   color: Theme.of(context).primaryColor,
                 ),
               ),

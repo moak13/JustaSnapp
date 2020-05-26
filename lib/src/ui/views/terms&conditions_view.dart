@@ -14,14 +14,24 @@ class TermsAndConditionsView extends StatelessWidget {
           },
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          Text('''User is soley ressponsible for his/her 
-                activities in relation to JustaSnapp Services'''),
-          Text(
-              '''User is prohibited from posting or distributing iinformation 
-                that are deforomatory, threatning or improper''')
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('''User is soley ressponsible for his/her activities in relation to JustaSnapp Services''',
+                  textAlign: TextAlign.justify),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                  '''User is prohibited from posting or distributing iinformation that are deforomatory, threatning or improper''',
+                  textAlign: TextAlign.justify),
+            )
+          ],
+        ),
       ),
     );
   }

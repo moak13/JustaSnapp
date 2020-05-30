@@ -14,12 +14,12 @@ class ScreenUtil {
 
   // This helps to scale height
   double setHeight({num height = 1}) {
-    return _screenHeight * height;
+    return _screenHeight / height;
   }
 
   // This helps to scale width
   double setWidth({num width = 1}) {
-    return _screenWidth * width;
+    return _screenWidth / width;
   }
 
   // This helps to scale texts

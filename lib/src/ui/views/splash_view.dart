@@ -63,7 +63,7 @@ class _SplashViewState extends State<SplashView> {
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: ScreenUtil(context).setSp(percentage: 35),
+                      fontSize: ScreenUtil(context).setSp(percentage: 80),
                       color: Color(0XFF303C42),
                     ),
                   ),
@@ -81,7 +81,7 @@ class _SplashViewState extends State<SplashView> {
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: ScreenUtil(context).setSp(percentage: 16),
+                      fontSize: ScreenUtil(context).setSp(percentage: 40),
                       color: Color(0XFF303C42),
                     ),
                   ),

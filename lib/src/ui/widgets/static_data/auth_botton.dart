@@ -6,7 +6,8 @@ class AuthBotton extends StatelessWidget {
   final String title;
   final Widget child;
   final bool onBusy;
-  const AuthBotton({Key key, this.title, this.child, this.onBusy}) : super(key: key);
+  const AuthBotton({Key key, this.title, this.child, this.onBusy})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +27,18 @@ class AuthBotton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           child: Center(
-            child: onBusy ? CircularProgressIndicator() : Text(
-              title,
-              style: GoogleFonts.roboto(
-                textStyle: TextStyle(
-                  color: Colors.white,
-                  fontSize: ScreenUtil(context).setSp(percentage: 40),
-                  fontStyle: FontStyle.normal,
-                ),
-              ),
-            ),
+            child: onBusy
+                ? CircularProgressIndicator()
+                : Text(
+                    title,
+                    style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: ScreenUtil(context).setSp(percentage: 40),
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ),
           ),
         ),
       ),

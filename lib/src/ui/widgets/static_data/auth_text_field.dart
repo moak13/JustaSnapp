@@ -5,12 +5,18 @@ class AuthTextField extends StatelessWidget {
   final String hint;
   final TextInputType inputType;
   final bool isPassword;
+  final bool obscureText;
+  final TextEditingController controller;
+  final Function toggle;
   const AuthTextField(
       {Key key,
       @required this.label,
       @required this.hint,
       this.inputType,
-      this.isPassword = false})
+      this.isPassword = false,
+      this.obscureText,
+      this.controller,
+      this.toggle})
       : super(key: key);
 
   @override
@@ -20,18 +26,32 @@ class AuthTextField extends StatelessWidget {
         top: 5,
         bottom: 5,
       ),
-      child: TextFormField(
-          obscureText: isPassword ? true : false,
-          keyboardType: inputType,
-          decoration: InputDecoration(
-            labelText: label,
-            hintText: hint,
-            suffixIcon: isPassword
-                ? IconButton(icon: Icon(Icons.visibility), onPressed: () {})
-                : null,
-            fillColor: Colors.white,
-            filled: true,
-          )),
+      child: isPassword
+          ? TextFormField(
+              controller: controller,
+              obscureText: obscureText,
+              keyboardType: inputType,
+              decoration: InputDecoration(
+                labelText: label,
+                hintText: hint,
+                suffixIcon: IconButton(
+                    icon: obscureText
+                        ? Icon(Icons.visibility)
+                        : Icon(Icons.visibility_off),
+                    onPressed: () => toggle),
+                fillColor: Colors.white,
+                filled: true,
+              ))
+          : TextFormField(
+              controller: controller,
+              obscureText: false,
+              keyboardType: inputType,
+              decoration: InputDecoration(
+                labelText: label,
+                hintText: hint,
+                fillColor: Colors.white,
+                filled: true,
+              )),
     );
   }
 }

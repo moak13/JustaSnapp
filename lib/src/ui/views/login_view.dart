@@ -88,15 +88,19 @@ class _LoginViewState extends State<LoginView> {
                                 child: Column(
                                   children: <Widget>[
                                     AuthTextField(
+                                      controller: model.ctrlEmail,
                                       label: 'Email',
                                       hint: 'please enter your email',
                                       inputType: TextInputType.emailAddress,
                                     ),
                                     AuthTextField(
+                                      controller: model.ctrlPass,
                                       label: 'Password',
                                       hint: 'please enter your password',
                                       inputType: TextInputType.text,
                                       isPassword: true,
+                                      obscureText: model.obscureText,
+                                      toggle: () => model.toggle,
                                     ),
                                     AuthBotton(
                                       title: 'Login',
@@ -149,12 +153,12 @@ class _LoginViewState extends State<LoginView> {
                                                   ),
                                                 ),
                                               )
-                                            ])),
+                                            ],),),
                                   ],
                                 ),
                               ),
                             )
-                          ]),
+                          ],),
                     )
                   ],
                 ),

@@ -16,6 +16,8 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final _formKey=GlobalKey<FormState>();
+  
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<LoginViewModel>.reactive(
@@ -85,6 +87,7 @@ class _LoginViewState extends State<LoginView> {
                               padding: const EdgeInsets.only(
                                   top: 33.5, left: 20, right: 20),
                               child: Form(
+                                key:_formKey,
                                 child: Column(
                                   children: <Widget>[
                                     AuthTextField(

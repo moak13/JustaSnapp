@@ -5,10 +5,17 @@ class ItemDetailTextField extends StatelessWidget {
   final String title;
   final int maxline;
   final bool isPrice;
+  final Widget suffixIcon;
+  final Function onSaved;
+  final TextInputType textInputType;
+
   const ItemDetailTextField({
     @required this.title,
     this.isPrice = false,
     this.maxline,
+    this.suffixIcon,
+    this.textInputType,
+    this.onSaved,
     Key key,
   }) : super(key: key);
 
@@ -24,7 +31,7 @@ class ItemDetailTextField extends StatelessWidget {
             title,
             style: GoogleFonts.roboto(
               textStyle: TextStyle(
-                color: Theme.of(context).primaryColor,
+                // color: Theme.of(context).primaryColor,
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
               ),
@@ -40,17 +47,20 @@ class ItemDetailTextField extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              bottomLeft: Radius.circular(10))),
+                              topLeft: Radius.circular(30),
+                              bottomLeft: Radius.circular(30))),
                       child: TextFormField(
                         maxLines: maxline,
+                        onSaved: onSaved,
+                        keyboardType: textInputType,
                         decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(10),
-                            )),
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -61,8 +71,8 @@ class ItemDetailTextField extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10),
-                              bottomRight: Radius.circular(10))),
+                              topRight: Radius.circular(30),
+                              bottomRight: Radius.circular(30))),
                       child: Center(
                         child: Text(
                           'NAIRA',
@@ -81,10 +91,11 @@ class ItemDetailTextField extends StatelessWidget {
                 maxLines: maxline,
                 decoration: InputDecoration(
                     filled: true,
+                    suffixIcon: suffixIcon,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(30),
                     )),
               )
       ],

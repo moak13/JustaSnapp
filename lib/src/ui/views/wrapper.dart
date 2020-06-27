@@ -40,7 +40,7 @@ class _WrapperState extends State<Wrapper> {
               ? 'JustaSnapp'
               : _currentIndex == 1
                   ? 'Favorite'
-                  : _currentIndex == 2 ? 'Message' : 'Profile',
+                  : _currentIndex == 3 ? 'Message' : 'Profile',
           style: GoogleFonts.roboto(
             textStyle: TextStyle(color: Colors.white),
           ),
@@ -48,7 +48,7 @@ class _WrapperState extends State<Wrapper> {
         centerTitle: true,
         backgroundColor: Color(0xFF031D44),
         actions: <Widget>[
-          _currentIndex == 3
+          _currentIndex == 4
               ? IconButton(
                   color: Colors.white,
                   icon: Icon(Icons.settings),
@@ -72,6 +72,7 @@ class _WrapperState extends State<Wrapper> {
       body: IndexedStack(index: _currentIndex, children: [
         HomeView(),
         FavouriteView(),
+        Text(''),
         MessageView(),
         ProfileView(),
       ]),
@@ -94,6 +95,12 @@ class _WrapperState extends State<Wrapper> {
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
               title: Text('Favorite'),
+            ),
+            BottomNavigationBarItem(
+              icon: Text(''),
+              title: FittedBox(
+                child: Text('Sell your stuff'),
+              ),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.chat),

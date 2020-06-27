@@ -15,7 +15,7 @@ class SaveProfileButton extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Container(
-          height: deviceSize.height * 0.2,
+          height: deviceSize.height * 0.07,
           width: deviceSize.width * 0.7,
           decoration: BoxDecoration(
             color: Color(0xFF031D44),
@@ -27,7 +27,8 @@ class SaveProfileButton extends StatelessWidget {
               style: GoogleFonts.roboto(
                 textStyle: TextStyle(
                   color: Colors.white,
-                  fontSize: ScreenUtil(context).setSp(percentage: 18),
+                  fontSize: ScreenUtil(context).setSp(percentage: 45),
+                  fontWeight: FontWeight.bold,
                   fontStyle: FontStyle.normal,
                 ),
               ),

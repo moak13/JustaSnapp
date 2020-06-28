@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:justasnapp/src/models/product.dart';
-import 'package:justasnapp/src/models/product_model.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/image_input.dart';
 import 'package:justasnapp/src/ui/widgets/static_data/item_details_text_fields.dart';
 import 'package:justasnapp/src/util/screen_util.dart';
@@ -28,7 +27,6 @@ class _SellYourStuffViewState extends State<SellYourStuffView> {
   void _saveForm() {
     _form.currentState.save();
     print(product.description);
-    
   }
 
   @override

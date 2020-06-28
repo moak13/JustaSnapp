@@ -1,4 +1,3 @@
-import 'package:justasnapp/src/models/category_model.dart';
 import 'package:flutter/foundation.dart';
 
 enum Location { Lagos, Abuja, PortHarcourt, Ibadan }
